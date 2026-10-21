@@ -8,11 +8,11 @@
 
 #define _XTAL_FREQ 4000000UL
 
-// Приклад: день народження 24
-#define BIRTH_DAY 24
+// День народження — 03
+#define BIRTH_DAY 3
 
-// Коди цифр для індикатора
-// зі спільним катодом
+// Коди цифр для семисегментного
+// індикатора зі спільним катодом
 const unsigned char digits[10] = {
     0x3F, // 0
     0x06, // 1
@@ -31,7 +31,6 @@ void main(void)
     unsigned char tens = BIRTH_DAY / 10;
     unsigned char units = BIRTH_DAY % 10;
 
-    // Налаштування портів
     TRISA = 0x00;
     TRISB = 0x00;
 
@@ -40,20 +39,24 @@ void main(void)
 
     while (1)
     {
-        // Перший розряд
+        // Вимикаємо обидва розряди
         PORTA = 0x00;
-        PORTB = digits[tens];
 
+        // Виведення першої цифри — 0
+        PORTB = digits[tens];
         PORTAbits.RA2 = 1;
+
         __delay_ms(10);
+
         PORTAbits.RA2 = 0;
 
-        // Другий розряд
+        // Виведення другої цифри — 3
         PORTB = digits[units];
-
         PORTAbits.RA3 = 1;
+
         __delay_ms(10);
+
         PORTAbits.RA3 = 0;
     }
 }
-дал
+
