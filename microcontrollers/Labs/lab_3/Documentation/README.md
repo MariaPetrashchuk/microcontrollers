@@ -108,7 +108,7 @@ D = τ / T,
 
 **Рисунок 4 — Дослідження ШІМ-сигналу за допомогою осцилографа.**
 
-<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/cdc9f5a8-e73b-4ccd-8803-5652649128ec" />
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/91705015-7b30-4f5e-8726-87137478b727" />
 
   
 ## 7. Контрольні запитання
